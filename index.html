@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Le lenti e i colori</title><style>
+:root{--bg:#fbfaf6;--tx:#1e2a3a;--ac:#2a7fb8;--hl:#fff3d1;--mu:#5a6b80;--cd:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#fbfaf6;--tx:#1e2a3a}}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,Segoe UI,sans-serif;overflow:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.s{position:absolute;inset:0;padding:4vh 7vw 9vh;display:none;flex-direction:column;gap:1.6vh;overflow-y:auto}
+.s.on{display:flex}
+h1{font-weight:300;font-size:clamp(24px,4vw,44px);text-align:center;margin:0 0 1vh;position:relative}
+h1:after{content:"";display:block;height:3px;width:0;background:linear-gradient(90deg,#2a7fb8,#f2b705);margin:8px auto 0;animation:w .9s .2s forwards}
+@keyframes w{to{width:140px}}
+p,li{font-size:clamp(15px,2.1vw,24px);line-height:1.45;margin:0}
+.hl{background:var(--hl);padding:1.4vh 1.6vw;border-radius:10px;border-left:6px solid #f2b705}
+.a{opacity:0;transform:translateY(18px);animation:u .7s forwards}
+.on .a:nth-child(2){animation-delay:.3s}.on .a:nth-child(3){animation-delay:.6s}.on .a:nth-child(4){animation-delay:.9s}.on .a:nth-child(5){animation-delay:1.2s}.on .a:nth-child(6){animation-delay:1.5s}
+.s:not(.on) .a{animation:none}
+@keyframes u{to{opacity:1;transform:none}}
+.row{display:flex;gap:3vw;align-items:center;flex-wrap:wrap}.row>*{flex:1 1 300px}
+svg{max-width:100%;height:auto}
+.r{stroke-dasharray:600;stroke-dashoffset:600;animation:d 2.2s .6s forwards}
+.r2{animation-delay:1.4s}.r3{animation-delay:2.2s}
+@keyframes d{to{stroke-dashoffset:0}}
+.fade{opacity:0;animation:u 1s 2s forwards}
+table{border-collapse:collapse;width:100%;font-size:clamp(13px,1.8vw,20px)}
+td,th{padding:.9vh 1vw;border-bottom:1px solid #d9dde3;text-align:left}th{color:var(--ac)}
+tr.a td:first-child{font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:3vw}@media(max-width:700px){.cols{grid-template-columns:1fr}}
+.card{background:var(--cd);border-radius:14px;padding:2vh 2vw;box-shadow:0 4px 18px #1e2a3a14}
+.card h3{margin:0 0 1vh;color:var(--ac);font-weight:600;font-style:italic;text-align:center;font-size:clamp(18px,2.4vw,28px)}
+.f{font-size:clamp(22px,3.4vw,40px);text-align:center;background:var(--hl);border-radius:12px;padding:1.4vh}
+.nav{position:fixed;left:0;right:0;bottom:env(safe-area-inset-bottom,0px);display:flex;justify-content:center;align-items:center;gap:16px;padding:1.2vh;background:linear-gradient(transparent,var(--bg) 40%);z-index:5}
+.nav button{border:0;background:var(--ac);color:#fff;font-size:20px;width:46px;height:46px;border-radius:50%;cursor:pointer}
+#pr{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:5px;background:linear-gradient(90deg,#2a7fb8,#f2b705);transition:width .4s;z-index:6}
+#ct{color:var(--mu);font-size:14px;min-width:54px;text-align:center}
+.spec{height:9vh;border-radius:8px;background:linear-gradient(90deg,#b81f1f,#e8481a,#f4a300,#f6e300,#8cc63f,#27a24a,#12a8a0,#1b9ad6,#1c4f9c,#6a4c9c);clip-path:inset(0 100% 0 0);animation:rv 3s .5s forwards}
+@keyframes rv{to{clip-path:inset(0 0 0 0)}}
+input[type=range]{width:100%;accent-color:#2a7fb8}
+.lg{display:inline-block;background:#e6f2fa;border-radius:8px;padding:2px 8px;font-size:.8em}
+</style></head><body><div id="pr"></div><div id="deck">
+
+<section class="s"><h1 class="a">Le lenti</h1>
+<p class="a hl">Una <b>lente</b> è un mezzo trasparente delimitato da due superfici curve (oppure una curva e l’altra piana), che produce <i>immagini</i> ingrandite o rimpicciolite degli oggetti.</p>
+<div class="row a"><div><p>Un raggio di luce che colpisce una lente subisce due rifrazioni: la prima passando dall’aria alla lente, la seconda passando dalla lente all’aria.</p><br><p>Le <i>lenti sottili</i> hanno uno spessore piccolo rispetto al raggio di curvatura delle loro superfici, perciò non è necessario studiare in dettaglio ciò che accade alla luce al loro interno.</p></div>
+<svg viewBox="0 0 400 220"><path d="M200 15Q235 110 200 205Q165 110 200 15Z" fill="#bfe1f5" stroke="#2a7fb8" stroke-width="2"/><line x1="0" y1="110" x2="400" y2="110" stroke="#999" stroke-dasharray="4"/><g class="r" stroke="#f2a100" stroke-width="3" fill="none"><path d="M10 70H188L330 150"/></g><g class="r r2" stroke="#f2a100" stroke-width="3" fill="none"><path d="M10 150H188L330 70"/></g></svg></div></section>
+
+<section class="s"><h1 class="a">Le lenti sottili</h1><p class="a">Le lenti sottili si distinguono in:</p>
+<div class="cols a"><div class="card"><h3>convergenti</h3><p>Le lenti convergenti sono più spesse al centro che ai bordi. Fanno convergere in un punto, detto <i>fuoco</i>, i raggi paralleli al loro asse di simmetria, o <i>asse ottico</i>.</p><svg viewBox="0 0 400 220"><path d="M130 15Q160 110 130 205Q100 110 130 15Z" fill="#bfe1f5" stroke="#2a7fb8" stroke-width="2"/><line x1="0" y1="110" x2="390" y2="110" stroke="#999" stroke-dasharray="4"/><g stroke="#f2a100" stroke-width="2.5" fill="none" class="r"><path d="M10 50H130L300 110"/><path d="M10 80H130L300 110"/><path d="M10 110H300"/><path d="M10 140H130L300 110"/><path d="M10 170H130L300 110"/></g><circle cx="300" cy="110" r="5"/><text x="300" y="132" font-style="italic" font-size="16" fill="#1e2a3a">F</text><text x="305" y="96" font-size="13" fill="#5a6b80">fuoco</text><text x="320" y="106" font-size="0"> </text></svg></div>
+<div class="card"><h3>divergenti</h3><p>Le lenti divergenti sono più spesse ai bordi. Fanno divergere i raggi paralleli all’asse ottico come se essi uscissero da un punto (il <i>fuoco</i>).</p><svg viewBox="0 0 400 220"><path d="M175 15Q200 110 175 205H225Q200 110 225 15Z" fill="#bfe1f5" stroke="#2a7fb8" stroke-width="2"/><line x1="0" y1="110" x2="390" y2="110" stroke="#999" stroke-dasharray="4"/><g stroke="#f2a100" stroke-width="2.5" fill="none" class="r"><path d="M10 50H180L370 5"/><path d="M10 80H190L370 55"/><path d="M10 110H370"/><path d="M10 140H190L370 165"/><path d="M10 170H180L370 215"/></g><g stroke="#888" stroke-dasharray="4" class="fade"><path d="M180 50L90 110M190 80L90 110"/></g><circle cx="90" cy="110" r="5"/><text x="82" y="132" font-style="italic" font-size="16">F</text></svg></div></div></section>
+
+<section class="s"><h1 class="a">Le lenti: asse ottico, centro e fuochi</h1>
+<div class="row a"><div><p>L’<i>asse ottico</i> è la retta che congiunge i centri delle due superfici sferiche a cui appartengono le facce della lente.</p><br><p>Il <i>centro O</i> è il punto dell’asse ottico che divide a metà lo spessore della lente.</p></div>
+<svg viewBox="0 0 400 170"><path d="M200 10Q220 80 200 150Q180 80 200 10Z" fill="#bfe1f5" stroke="#2a7fb8" stroke-width="2"/><line x1="20" y1="80" x2="380" y2="80" stroke="#999" stroke-dasharray="4"/><g class="fade"><circle cx="80" cy="80" r="5"/><circle cx="200" cy="80" r="5"/><circle cx="320" cy="80" r="5"/><text x="74" y="66" font-style="italic">F′</text><text x="196" y="66" font-style="italic">O</text><text x="316" y="66" font-style="italic">F</text><path d="M80 120H200M200 120H320" stroke="#2a7fb8" stroke-width="2"/><text x="136" y="140" font-style="italic">f</text><text x="256" y="140" font-style="italic">f</text></g></svg></div>
+<p class="a">Ogni lente ha due <i>fuochi</i>, <i>F</i> e <i>F′</i>, uno per faccia, che hanno la stessa <i>distanza focale F</i> dal centro <i>O</i>.</p>
+<p class="a hl"><i>ESEMPI</i>:<br>Sono lenti convergenti la lente di ingrandimento e le lenti degli occhiali per presbiti e ipermetropi.<br>Sono lenti divergenti le lenti degli occhiali da miope e la lente dello spioncino della porta.</p></section>
+
+<section class="s"><h1 class="a">I raggi principali delle lenti convergenti</h1>
+<p class="a">Come per gli specchi, per disegnare l’immagine di un punto <i>P</i> prodotta da una lente bisogna intersecare due dei seguenti raggi, detti <i>raggi principali</i>:</p>
+<div class="cols a" style="grid-template-columns:repeat(3,1fr)">
+<div class="card"><p>Il raggio che arriva parallelo all’asse ottico converge in un fuoco.</p><svg viewBox="0 0 200 130"><path d="M95 10Q108 65 95 120Q82 65 95 10Z" fill="#bfe1f5" stroke="#2a7fb8"/><line x1="0" y1="75" x2="200" y2="75" stroke="#999" stroke-dasharray="3"/><circle cx="20" cy="40" r="6" fill="none" stroke="#e8b800" stroke-width="3"/><path class="r" d="M26 40H95L170 100" stroke="#f2a100" stroke-width="2.5" fill="none"/><circle cx="150" cy="75" r="3"/><text x="146" y="68" font-size="11">F</text></svg></div>
+<div class="card"><p>Il raggio che passa per l’altro fuoco diventa parallelo all’asse.</p><svg viewBox="0 0 200 130"><path d="M95 10Q108 65 95 120Q82 65 95 10Z" fill="#bfe1f5" stroke="#2a7fb8"/><line x1="0" y1="75" x2="200" y2="75" stroke="#999" stroke-dasharray="3"/><circle cx="20" cy="30" r="6" fill="none" stroke="#e8b800" stroke-width="3"/><path class="r" d="M26 33L95 105H190" stroke="#f2a100" stroke-width="2.5" fill="none"/><circle cx="50" cy="75" r="3"/><text x="44" y="68" font-size="11">F′</text></svg></div>
+<div class="card"><p>Il raggio che passa per il centro prosegue nella stessa direzione.</p><svg viewBox="0 0 200 130"><path d="M95 10Q108 65 95 120Q82 65 95 10Z" fill="#bfe1f5" stroke="#2a7fb8"/><line x1="0" y1="75" x2="200" y2="75" stroke="#999" stroke-dasharray="3"/><circle cx="20" cy="35" r="6" fill="none" stroke="#e8b800" stroke-width="3"/><path class="r" d="M26 38L190 112" stroke="#f2a100" stroke-width="2.5" fill="none"/><text x="92" y="68" font-size="11">O</text></svg></div></div>
+<p class="a">Le proprietà delle immagini prodotte da una lente sottile dipendono dalla convergenza/divergenza della lente e dalla posizione dell’oggetto rispetto alla lente.</p></section>
+
+<section class="s"><h1 class="a">Le immagini delle lenti convergenti</h1>
+<table><tr class="a"><th>Posizione dell’oggetto</th><th>Proprietà dell’immagine</th></tr>
+<tr class="a"><td>A distanza maggiore del doppio della distanza focale</td><td>Reale, capovolta, rimpicciolita</td></tr>
+<tr class="a"><td>Al doppio della distanza focale</td><td>Reale, capovolta, delle stesse dimensioni</td></tr>
+<tr class="a"><td>Tra il doppio della distanza focale e il fuoco</td><td>Reale, capovolta, ingrandita</td></tr>
+<tr class="a"><td>Nel fuoco</td><td>Nessuna immagine</td></tr>
+<tr class="a"><td>Tra il fuoco e la lente</td><td>Virtuale, diritta, ingrandita</td></tr></table>
+<p class="a" style="color:var(--mu);font-size:15px">Prova la simulazione nella slide “La legge dei punti coniugati”.</p></section>
+
+<section class="s"><h1 class="a">Le immagini delle lenti divergenti</h1>
+<p class="a">Un raggio, che arriva parallelo all’asse ottico di una lente divergente, si allontana dall’asse dopo aver attraversato la lente. Il suo prolungamento passa per il fuoco della prima faccia.</p>
+<svg class="a" viewBox="0 0 460 200" style="max-height:34vh;align-self:center"><path d="M300 10Q320 100 300 190H340Q320 100 340 10Z" fill="#bfe1f5" stroke="#2a7fb8" stroke-width="2"/><line x1="40" y1="160" x2="450" y2="160" stroke="#999" stroke-dasharray="4"/><path d="M40 160V50" stroke="#2a9d2a" stroke-width="4"/><path class="r" d="M40 50H320L440 10" stroke="#f2a100" stroke-width="2.5" fill="none"/><path class="r r2" d="M40 50L320 160L440 190" stroke="#f2a100" stroke-width="2.5" fill="none"/><path class="fade" d="M320 50L120 160" stroke="#777" stroke-dasharray="4"/><path class="fade" d="M165 160V105" stroke="#8fd18f" stroke-width="4"/><text x="38" y="180" font-style="italic">A</text><text x="30" y="40" font-style="italic">B</text><text x="112" y="180" font-style="italic">F</text><text x="160" y="180" font-style="italic">A′</text><text x="162" y="98" font-style="italic">B′</text><text x="316" y="180" font-style="italic">O</text></svg>
+<p class="a">Le immagini prodotte da una lente sottile divergente sono perciò <i>virtuali</i>. Costruendo l’immagine con il metodo grafico dei raggi principali, si nota inoltre che è sempre diritta e rimpicciolita.</p></section>
+
+<section class="s"><h1 class="a">La legge dei punti coniugati delle lenti</h1>
+<p class="a">La distanza <i>p</i> dell’oggetto dal centro <i>O</i> della lente, la distanza <i>q</i> dell’immagine prodotta da <i>O</i> e la distanza focale <i>f</i> sono legate tra loro dalla legge dei punti coniugati, identica a quella degli specchi:</p>
+<div class="f a">1/<i>p</i> + 1/<i>q</i> = 1/<i>f</i></div>
+<p class="a">La grandezza 1/<i>f</i> è detta <b>potere diottrico</b> della lente e si misura in m<sup>–1</sup> o <i>diottrie</i>.</p>
+<div class="card a"><p>Quando si usa la legge dei punti coniugati bisogna ricordare che:</p><ul><li>la distanza <i>p</i> è sempre positiva;</li><li><i>q</i> è positiva per le immagini reali e negativa per quelle virtuali;</li><li><i>f</i> è positiva per le lenti convergenti e negativa per le lenti divergenti.</li></ul></div>
+<div class="card a"><b>Simulazione</b> (lente convergente, <i>f</i> = 10 cm) — sposta l’oggetto: <i>p</i> = <b id="pv">30</b> cm<input type="range" id="ps" min="3" max="45" step="0.5" value="30"><svg id="sim" viewBox="0 0 600 190" style="max-height:26vh"></svg><p id="so" style="font-size:16px"></p></div></section>
+
+<section class="s"><h1 class="a">L’ingrandimento di una lente</h1>
+<p class="a">Come per gli specchi sferici, l’ingrandimento <i>G</i> ha come valore assoluto il rapporto tra l’altezza <i>h′</i> dell’immagine e l’altezza <i>h</i> dell’oggetto:</p>
+<div class="f a">|<i>G</i>| = <i>h′</i>/<i>h</i> = A′B′/AB</div><p class="a">e vale l’equazione:</p>
+<div class="f a"><i>G</i> = – <i>q</i>/<i>p</i></div>
+<ul class="hl a" style="padding:1.4vh 2.5vw"><li>Se |<i>G</i>| &gt; 1 l’immagine è ingrandita, se |<i>G</i>| &lt; 1 l’immagine è rimpicciolita;</li><li><i>G</i> risulta positivo se l’immagine è diritta, negativo se è capovolta.</li></ul></section>
+
+<section class="s"><h1 class="a">L’occhio</h1>
+<p class="a">I raggi emessi o diffusi dagli oggetti che ci circondano entrano nell’occhio dalla pupilla, attraversano un sistema di lenti costituito da vari mezzi trasparenti, per formare un’immagine reale e capovolta sulla rètina (occhio sano).</p>
+<div class="cols a"><div class="card"><p>L’occhio miope è troppo convergente e produce l’immagine davanti alla rètina. Per correggere il difetto si deve usare una lente divergente.</p><svg viewBox="0 0 300 110"><circle cx="210" cy="55" r="45" fill="#e4f3fa" stroke="#9cd0ea" stroke-width="2"/><path class="r" d="M10 25H175L225 55M10 85H175L225 55" stroke="#f2a100" stroke-width="2.5" fill="none"/><circle cx="225" cy="55" r="4"/><path d="M105 15Q115 55 105 95H115Q125 55 115 15Z" fill="#bfe1f5" stroke="#2a7fb8" class="fade"/></svg></div>
+<div class="card"><p>L’occhio ipermetrope è poco convergente e produce l’immagine dietro la rètina. Il difetto si corregge con una lente convergente.</p><svg viewBox="0 0 300 110"><circle cx="210" cy="55" r="45" fill="#e4f3fa" stroke="#9cd0ea" stroke-width="2"/><path class="r" d="M10 25H175L270 55M10 85H175L270 55" stroke="#f2a100" stroke-width="2.5" fill="none"/><circle cx="270" cy="55" r="4"/><path d="M110 15Q120 55 110 95Q100 55 110 15Z" fill="#bfe1f5" stroke="#2a7fb8" class="fade"/></svg></div></div>
+<p class="a">Le lenti per miopia e ipermetropia hanno lo scopo di riportare l’immagine sulla rètina.</p></section>
+
+<section class="s"><h1 class="a">I colori</h1>
+<div class="row a"><div><p>Così come le onde sonore di diversa frequenza sono percepite come suoni di diversa altezza, analogamente:</p><p class="hl" style="margin-top:1.4vh">onde luminose di diversa frequenza sono percepite dall’occhio come luci di diverso colore.</p></div>
+<table><tr><th colspan="2">LUNGHEZZE D’ONDA DEI COLORI</th></tr><tr><th>Colore</th><th>λ (nm)</th></tr>
+<tr><td>Violetto</td><td>380-420</td></tr><tr><td>Indaco</td><td>420-440</td></tr><tr><td>Azzurro</td><td>440-470</td></tr><tr><td>Verde</td><td>470-570</td></tr><tr><td>Giallo</td><td>570-590</td></tr><tr><td>Arancione</td><td>590-610</td></tr><tr><td>Rosso</td><td>610-750</td></tr></table></div>
+<p class="a">Le lampade al sodio emettono luce gialla di frequenza <i>f</i> = 5,09 × 10<sup>14</sup> Hz. La sua lunghezza d’onda nel vuoto è</p>
+<div class="f a">λ = <i>c</i>/<i>f</i> = (3,00 × 10<sup>8</sup> m/s)/(5,09 × 10<sup>14</sup> Hz) = 5,89 × 10<sup>–7</sup> m = 589 nm</div>
+<p class="a">Altre sorgenti emettono luci di altri colori che hanno <i>f</i> e λ differenti.</p></section>
+
+<section class="s"><h1 class="a">La dispersione della luce e lo spettro visibile</h1>
+<p class="a">La luce del Sole è bianca e non ha una precisa lunghezza d’onda e frequenza:</p>
+<p class="a hl">la <b>luce bianca</b> è una miscela di onde elettromagnetiche che hanno frequenze e lunghezze d’onda diverse.</p>
+<div class="row a"><p>Se un fascio di luce bianca è fatto passare attraverso un prisma di vetro, emerge un ventaglio di luce multicolore. Ai diversi colori corrispondono diverse onde elettromagnetiche, chiamate <b>componenti monocromatiche</b> della luce.</p>
+<svg viewBox="0 0 400 200"><path d="M170 160L215 40L260 160Z" fill="#e6f2fa" stroke="#2a7fb8" stroke-width="2"/><path class="r" d="M10 120L195 110" stroke="#aaa" stroke-width="6"/><g class="fade" stroke-width="4"><path d="M235 110L390 70" stroke="#d62d2d"/><path d="M235 110L390 85" stroke="#f08a00"/><path d="M235 110L390 100" stroke="#e8d200"/><path d="M235 110L390 115" stroke="#33a64a"/><path d="M235 110L390 130" stroke="#1b9ad6"/><path d="M235 110L390 145" stroke="#2c3fa0"/><path d="M235 110L390 160" stroke="#7a4cb0"/></g></svg></div>
+<p class="a hl">L’effetto della rifrazione di separare le diverse componenti monocromatiche della luce è detto <b>dispersione</b>: un prisma di vetro produce dispersione perché il suo indice di rifrazione, come anche gli indizi di rifrazione degli altri mezzi trasparenti, dipende dalla frequenza della luce che lo attraversa.</p></section>
+
+<section class="s"><h1 class="a">La dispersione della luce e lo spettro visibile</h1>
+<p class="a hl">L’insieme delle onde elettromagnetiche che il nostro sistema occhio-cervello percepisce come colori è chiamato <b>spettro visibile</b>. Le sue lunghezze d’onda (nel vuoto) vanno da 380 nm a 750 nm e le sue frequenze sono comprese tra gli ordini di grandezza di 10<sup>14</sup> Hz e 10<sup>15</sup> Hz.</p>
+<div class="a"><div class="spec"></div><div style="display:flex;justify-content:space-between;color:var(--mu);font-size:clamp(11px,1.6vw,16px);margin-top:4px"><span>750</span><span>700</span><span>650</span><span>600</span><span>550</span><span>500</span><span>λ (nm)</span><span>380</span></div><div style="display:flex;justify-content:space-between;font-size:clamp(11px,1.6vw,16px);margin-top:4px"><span>rosso</span><span>arancio</span><span>giallo</span><span>verde</span><span>azzurro</span><span>indaco</span><span>violetto</span></div></div>
+<p class="a">Il nostro sistema visivo non è sensibile alle onde elettromagnetiche di λ &gt; 750 nm (radiazioni infrarosse, microonde, onde radio) e di λ &lt; 380 nm (radiazioni ultraviolette, raggi X, raggi gamma).</p></section>
+
+<section class="s"><h1 class="a">L’arcobaleno</h1>
+<div class="row a"><p>L’arcobaleno è prodotto dalla dispersione della luce solare da parte delle gocce di pioggia. Ogni goccia si comporta come un prisma.</p>
+<svg viewBox="0 0 400 200"><g fill="none" stroke-width="9" class="fade" style="animation-delay:.3s"><path d="M20 190A180 180 0 0 1 380 190" stroke="#d62d2d"/><path d="M32 190A168 168 0 0 1 368 190" stroke="#f08a00"/><path d="M44 190A156 156 0 0 1 356 190" stroke="#e8d200"/><path d="M56 190A144 144 0 0 1 344 190" stroke="#33a64a"/><path d="M68 190A132 132 0 0 1 332 190" stroke="#1b9ad6"/><path d="M80 190A120 120 0 0 1 320 190" stroke="#2c3fa0"/><path d="M92 190A108 108 0 0 1 308 190" stroke="#7a4cb0"/></g></svg></div>
+<div class="card a"><svg viewBox="0 0 520 160"><path class="r" d="M10 20L270 55" stroke="#f2a100" stroke-width="3"/><circle cx="290" cy="60" r="22" fill="#bfe1f5" stroke="#2a7fb8"/><path class="r r2" d="M272 70L100 120" stroke="#d62d2d" stroke-width="3"/><path class="r r2" d="M275 80L100 130" stroke="#7a4cb0" stroke-width="3"/><text x="300" y="100" fill="#d62d2d" font-size="13">rosso</text><text x="300" y="118" fill="#7a4cb0" font-size="13">violetto</text><text x="310" y="40" font-size="13" fill="#5a6b80">goccia di pioggia</text><text x="20" y="150" font-size="13" fill="#5a6b80">all’osservatore giungono colori diversi da gocce diverse · a ogni rifrazione il violetto è deviato di più e il rosso di meno</text></svg></div>
+<p class="a">Di solito gli arcobaleni più vividi sono circondati da un arcobaleno secondario, che ha i colori invertiti e deriva da un’ulteriore riflessione entro le gocce. Poiché a ogni riflessione una parte della luce si rifrange nell’aria, l’arcobaleno secondario è più tenue del primario.</p></section>
+
+<section class="s"><h1 class="a">I colori dei corpi illuminati</h1>
+<div class="row a"><p>I corpi che non si lasciano attraversare dalla luce sono detti <i>opachi</i>. Il più delle volte gli oggetti opachi compiono un <b>assorbimento selettivo</b>, cioè assorbono solo le onde luminose di determinate lunghezze d’onda. Per esempio, i girasoli assorbono tutti i colori tranne il giallo.</p>
+<svg viewBox="0 0 300 180"><g class="fade" style="animation-delay:.4s"><g transform="translate(150 80)" fill="#f6c800"><ellipse rx="14" ry="60" transform="rotate(0)"/><ellipse rx="14" ry="60" transform="rotate(45)"/><ellipse rx="14" ry="60" transform="rotate(90)"/><ellipse rx="14" ry="60" transform="rotate(135)"/></g><circle cx="150" cy="80" r="26" fill="#7a4a1a"/></g><path class="r" d="M5 60L90 80" stroke="#bbb" stroke-width="6"/><path class="r r2" d="M95 110L10 150" stroke="#f2d000" stroke-width="4"/></svg></div>
+<p class="a hl">Gli oggetti opachi hanno colori diversi perché, quando sono investiti da luce bianca, assorbono alcuni colori e ne diffondono altri. Un corpo bianco rinvia tutti i colori e un corpo nero li assorbe tutti.</p></section>
+</div>
+<div class="nav"><button id="pv_" aria-label="Indietro">‹</button><span id="ct"></span><button id="nx" aria-label="Avanti">›</button></div>
+<script>
+var S=[].slice.call(document.querySelectorAll('.s')),i=0;
+function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach(function(s,k){s.classList.toggle('on',k===i)});
+document.getElementById('ct').textContent=(i+1)+' / '+S.length;document.getElementById('pr').style.width=((i+1)/S.length*100)+'%';S[i].scrollTop=0;
+try{history.replaceState(null,'','#s'+(i+1))}catch(e){}}
+document.getElementById('nx').onclick=function(){go(i+1)};document.getElementById('pv_').onclick=function(){go(i-1)};
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(i+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1)});
+var tx=0;document.addEventListener('touchstart',function(e){tx=e.touches[0].clientX});document.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>60)go(i+(d<0?1:-1))});
+function sim(){var p=+document.getElementById('ps').value,f=10;document.getElementById('pv').textContent=p;
+var sc=9,ox=300,ay=95,h=3.2,out='<line x1="0" y1="'+ay+'" x2="600" y2="'+ay+'" stroke="#999" stroke-dasharray="4"/><path d="M300 15Q318 95 300 175Q282 95 300 15Z" fill="#bfe1f5" stroke="#2a7fb8" stroke-width="2"/>';
+out+='<circle cx="'+(ox-f*sc)+'" cy="'+ay+'" r="3"/><circle cx="'+(ox+f*sc)+'" cy="'+ay+'" r="3"/><text x="'+(ox-f*sc-6)+'" y="'+(ay+16)+'" font-size="12">F′</text><text x="'+(ox+f*sc-4)+'" y="'+(ay+16)+'" font-size="12">F</text>';
+var xo=ox-p*sc,ho=h*sc;out+='<line x1="'+xo+'" y1="'+ay+'" x2="'+xo+'" y2="'+(ay-ho)+'" stroke="#2a9d2a" stroke-width="4"/>';
+var msg;if(Math.abs(p-f)<0.3){msg='Oggetto nel fuoco: nessuna immagine (i raggi escono paralleli).';out+='<path d="M'+xo+' '+(ay-ho)+'H300L600 '+(ay+ho*0)+'" stroke="#f2a100" fill="none"/>'}
+else{var q=1/(1/f-1/p),G=-q/p,xi=ox+q*sc,hi=G*ho;
+out+='<line x1="'+xi+'" y1="'+ay+'" x2="'+xi+'" y2="'+(ay-hi)+'" stroke="#2a9d2a" stroke-width="4" '+(q<0?'stroke-dasharray="4" opacity=".6"':'')+'/>';
+out+='<path d="M'+xo+' '+(ay-ho)+'L'+ox+' '+(ay-ho)+'L'+xi+' '+(ay-hi)+'" stroke="#f2a100" stroke-width="2" fill="none"'+(q<0?' />':' />');
+out+='<path d="M'+xo+' '+(ay-ho)+'L'+xi+' '+(ay-hi)+'" stroke="#f2a100" stroke-width="2" fill="none"/>';
+msg='q = '+q.toFixed(1)+' cm ('+(q>0?'immagine reale':'immagine virtuale')+') · G = '+G.toFixed(2)+' ('+(G<0?'capovolta':'diritta')+', '+(Math.abs(G)>1?'ingrandita':Math.abs(G)<1?'rimpicciolita':'stesse dimensioni')+')';}
+document.getElementById('sim').innerHTML=out;document.getElementById('so').textContent=msg}
+document.getElementById('ps').oninput=sim;sim();
+function sch(m){var f=34,X=130,Y=64,h=22,xo=X-m*f,yB=Y-h,e=250,y1=yB+(e-X)*h/f,y2=Y+(e-X)*h/(m*f),s='<svg viewBox="0 0 260 110" style="width:min(300px,34vw);max-height:22vh"><line x1="0" y1="'+Y+'" x2="260" y2="'+Y+'" stroke="#999" stroke-dasharray="3"/><path d="M130 6Q140 64 130 108Q120 64 130 6Z" fill="#bfe1f5" stroke="#2a7fb8"/><circle cx="'+(X-f)+'" cy="'+Y+'" r="2.5"/><circle cx="'+(X+f)+'" cy="'+Y+'" r="2.5"/><text x="'+(X-f-5)+'" y="'+(Y+14)+'" font-size="9">F′</text><text x="'+(X+f-3)+'" y="'+(Y+14)+'" font-size="9">F</text><line x1="'+xo+'" y1="'+Y+'" x2="'+xo+'" y2="'+yB+'" stroke="#2a9d2a" stroke-width="3"/><path class="r" d="M'+xo+' '+yB+'H'+X+'L'+e+' '+y1+'" stroke="#f2a100" stroke-width="1.6" fill="none"/><path class="r r2" d="M'+xo+' '+yB+'L'+e+' '+y2+'" stroke="#f2a100" stroke-width="1.6" fill="none"/>';if(m!=1){var q=m/(m-1),xi=X+q*f,G=-q/m,yi=Y-G*h,v=q<0;s+='<line class="fade" x1="'+xi+'" y1="'+Y+'" x2="'+xi+'" y2="'+yi+'" stroke="#6cc36c" stroke-width="3"'+(v?' stroke-dasharray="3"':'')+'/>';if(v)s+='<path class="fade" d="M'+X+' '+yB+'L'+xi+' '+yi+'M'+X+' '+Y+'L'+xi+' '+yi+'" stroke="#888" stroke-dasharray="3" fill="none"/>'}return s+'</svg>'}
+var rw=S[4].querySelectorAll('tr');rw[0].insertAdjacentHTML('beforeend','<th>Schema</th>');[3,2,1.5,1,.5].forEach(function(m,k){rw[k+1].insertAdjacentHTML('beforeend','<td>'+sch(m)+'</td>')});
+var cd=S[8].querySelectorAll('.card'),EY='<circle cx="210" cy="55" r="45" fill="#e4f3fa" stroke="#9cd0ea" stroke-width="2"/>';
+cd[0].insertAdjacentHTML('beforeend','<p style="font-size:14px;color:var(--mu)">e la sua correzione</p><svg viewBox="0 0 300 110">'+EY+'<path class="r" d="M10 25H100L175 17L255 55M10 85H100L175 93L255 55" stroke="#f2a100" stroke-width="2.5" fill="none"/><path d="M96 12Q104 55 96 98H108Q100 55 108 12Z" fill="#bfe1f5" stroke="#2a7fb8"/></svg>');
+cd[1].insertAdjacentHTML('beforeend','<p style="font-size:14px;color:var(--mu)">e la sua correzione</p><svg viewBox="0 0 300 110">'+EY+'<path class="r" d="M10 25H100L175 35L255 55M10 85H100L175 75L255 55" stroke="#f2a100" stroke-width="2.5" fill="none"/><path d="M102 12Q112 55 102 98Q92 55 102 12Z" fill="#bfe1f5" stroke="#2a7fb8"/></svg>');
+S[0].querySelector('.row').insertAdjacentHTML('beforeend','<svg viewBox="0 0 240 150"><style>.mg{animation:mv 4s ease-in-out infinite alternate}@keyframes mv{from{transform:translate(-30px,0)}to{transform:translate(60px,10px)}}</style><g fill="#8a97a8" font-size="12" font-family="serif"><text x="10" y="30">theory, these surfaces</text><text x="10" y="55">small planar objects</text><text x="10" y="80">straight line through</text><text x="10" y="105">each point on σ has</text></g><g class="mg"><circle cx="90" cy="62" r="42" fill="#fffdf2" fill-opacity=".92" stroke="#2a7fb8" stroke-width="5"/><text x="52" y="72" font-size="28" font-family="serif" fill="#1e2a3a">point</text><line x1="120" y1="92" x2="160" y2="140" stroke="#7a4a1a" stroke-width="9" stroke-linecap="round"/></g></svg>');
+S[9].querySelector('.row').insertAdjacentHTML('beforeend','<svg viewBox="0 0 200 200"><style>.gl{animation:gl 2s ease-in-out infinite alternate}@keyframes gl{from{opacity:.25}to{opacity:.8}}</style><circle class="gl" cx="150" cy="40" r="42" fill="#ffd34d"/><circle class="gl" cx="55" cy="72" r="30" fill="#ffd34d"/><rect x="146" y="40" width="7" height="155" fill="#333"/><path d="M149 85L60 72" stroke="#333" stroke-width="5"/><ellipse cx="150" cy="40" rx="13" ry="19" fill="#ffb300"/><ellipse cx="55" cy="72" rx="20" ry="9" fill="#ffb300"/><text x="60" y="190" font-size="13" fill="#5a6b80">f = 5,09 × 10¹⁴ Hz · 589 nm</text></svg>');
+var h=parseInt((location.hash||'').slice(2));go(h?h-1:0);
+</script></body></html>
